@@ -1,10 +1,3 @@
-# python
-
-Configfacets python client library
-
-## Usage
-
-```
 from configfacets.configuration import Configuration
 
 config = Configuration(
@@ -19,6 +12,3 @@ rabbitMQHost = config.get_value("rabbitmq.host")
 rabbitMQPort = config.get_value("rabbitmq.port")
 
 print("RabbitMQ Host:{}, Port:{}".format(rabbitMQHost, rabbitMQPort))
-
-
-```
