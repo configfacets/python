@@ -5,6 +5,10 @@ Configfacets python client library
 ## Usage
 
 ```
+pip install configfacets==0.0.1
+```
+
+```
 from configfacets.configuration import Configuration
 
 config = Configuration(
