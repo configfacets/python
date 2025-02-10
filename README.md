@@ -1,8 +1,12 @@
-# python
+# Configfacets - https://configfacets.com
 
-Configfacets python client library
+## Empower teams with configurations built for collaboration
 
-## Usage
+One platform, endless possibilities: Streamline application and deployment configurations, Infrastructure as Code (IaC), agentic prompts, feature flags, and more.
+
+## Configfacets python client library
+
+### Usage
 
 ```
 pip install configfacets==0.0.1
