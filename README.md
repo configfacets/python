@@ -9,14 +9,14 @@ One platform, endless possibilities: Streamline application and deployment confi
 ### Usage
 
 ```
-pip install configfacets==0.0.1
+pip install configfacets
 ```
 
 ```
 from configfacets.configuration import Configuration
 
 config = Configuration(
-    apiUrl="https://configfacets.com/apis/repos/configfacets/core-concepts/applications-0.0.1/resources/collections/api-configurations/exec?format=json",
+    apiUrl="https://configfacets.com/apis/repos/configfacets/core-concepts/appconfigs/resources/collections/api-configurations/exec?format=json",
     apiKey="<your_api_key>",
     postBody={"facets": ["env:prod", "cluster:aws", "region:east"]},
 )
