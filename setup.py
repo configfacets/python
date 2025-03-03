@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="configfacets",
-    version="v0.0.1",
+    version="0.0.3",
     packages=find_packages(),
     install_requires=["requests", "pyyaml"],
     description="Package for generating application configuration",
