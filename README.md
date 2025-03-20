@@ -35,7 +35,8 @@ pip install configfacets
 from configfacets.configuration import Configuration
 
 config = Configuration(
-    apiUrl="https://configfacets.com/apis/repos/configfacets/core-concepts/appconfigs/resources/collections/api-configurations/exec?format=json",
+    source="https://configfacets.com/apis/repos/configfacets/core-concepts/appconfigs/resources/collections/api-configurations/exec?format=json",
+    source_type="url",
     apiKey="<your_api_key>",
     postBody={"facets": ["env:prod", "cluster:aws", "region:east"]},
 )
@@ -46,18 +47,17 @@ rabbitMQHost = config.get_value("rabbitmq.host")
 rabbitMQPort = config.get_value("rabbitmq.port")
 
 print("RabbitMQ Host:{}, Port:{}".format(rabbitMQHost, rabbitMQPort))
-
 ```
 
 ## API Reference
 
 **Configuration**
 
-- `__init__(self, apiUrl, apiKey=None, postBody=None):` Initializes the configuration object.
-- `fetch(self):` Fetches the configuration data from the API.
+- `__init__(self, source, source_type, apiKey=None, postBody=None):` Initializes the configuration object with a source (URL or file) and source type.
+- `fetch(self):` Fetches the configuration data from the source.
 - `get_resp(self):` Returns the fetched configuration data.
 - `get_value(self, key_path):` Retrieves the value for the specified key path.
 
 ## Contributing
 
-We welcome contributions!, feel free to connect with us in our [Discord community](https://discord.gg/zWj3Rzud5s)
+We welcome contributions! Feel free to connect with us in our [Discord community](https://discord.gg/zWj3Rzud5s).
