@@ -36,7 +36,7 @@ from configfacets.configuration import Configuration
 
 config = Configuration(
     source="https://configfacets.com/apis/repos/configfacets/core-concepts/appconfigs/resources/collections/api-configurations/exec?format=json",
-    source_type="url",
+    sourceType="url",
     apiKey="<your_api_key>",
     postBody={"facets": ["env:prod", "cluster:aws", "region:east"]},
 )
@@ -53,7 +53,7 @@ print("RabbitMQ Host:{}, Port:{}".format(rabbitMQHost, rabbitMQPort))
 
 **Configuration**
 
-- `__init__(self, source, source_type, apiKey=None, postBody=None):` Initializes the configuration object with a source (URL or file) and source type.
+- `__init__(self, source, sourceType, apiKey=None, postBody=None):` Initializes the configuration object with a source (URL or file) and source type.
 - `fetch(self):` Fetches the configuration data from the source.
 - `get_resp(self):` Returns the fetched configuration data.
 - `get_value(self, key_path):` Retrieves the value for the specified key path.

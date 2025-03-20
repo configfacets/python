@@ -7,16 +7,16 @@ from .dict import DictUtils
 
 
 class Configuration:
-    def __init__(self, source, source_type, **kwargs):
+    def __init__(self, source, sourceType, **kwargs):
         self.source = source
-        self.source_type = source_type
+        self.sourceType = sourceType
         self.api_key = kwargs.get("apiKey")
         self.post_body = kwargs.get("postBody")
         self.resp = None
         self.http_client = BaseHTTP()
 
     def fetch(self):
-        if self.source_type == "file":
+        if self.sourceType == "file":
             if not os.path.exists(self.source):
                 raise ValueError("File not found: {}".format(self.source))
 
@@ -32,7 +32,7 @@ class Configuration:
                 except yaml.YAMLError:
                     result = content  # Keep as raw text if neither JSON nor YAML
 
-        elif self.source_type == "url":
+        elif self.sourceType == "url":
             headers = {"X-APIKEY": self.api_key} if self.api_key else {}
             response = self.http_client.post(self.source, self.post_body, headers)
 
@@ -48,7 +48,7 @@ class Configuration:
                 result = None
 
         else:
-            raise ValueError("Invalid source_type. Must be 'file' or 'url'")
+            raise ValueError("Invalid sourceType. Must be 'file' or 'url'")
 
         self.resp = result
         return result
